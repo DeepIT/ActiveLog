@@ -1,0 +1,27 @@
+ActiveLog project consists from two targets:
+
+1. DIALog - an active logging framework
+2. ActiveLog app to filter logs
+
+DIALog framework contains important headers and code files, both for apply at application level,
+and Distributed Notifications observer, to control from ActiveLog GUI.
+
+Goal: shut up all logs with active filter.
+You can control logs with GUI or via LogModules environment variable.
+
+Every file .m interprets as module with the same name as file original name without extension.
+You can control output by module names, or by defined zone names (unlimited count).
+'*' means all modules.
+
+Add compiler flag '-DDEBUG' in Debug configuration to activate debug logging, such as:
+NSLogDebug, NSLogDebugMethod, NSLogZoneDebug, NSPF() etc.
+You can force DIALog features in release production with '-DFORCE_LOGS'.
+
+You can totally disable observer with code:
+
+#if ! defined DEBUG && ! defined FORCE_LOGS
+ [DINSLogObserver setEnabled:NO];
+#endif
+
+DIALog/ActiveLog also supported ColorLog facilities.
+See more in header examples.
