@@ -1,4 +1,4 @@
-ActiveLog project consists from two targets:
+ActiveLog project consists of two targets:
 
 1. DIALog - an active logging framework
 2. ActiveLog app to filter logs
